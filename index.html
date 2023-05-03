@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    :root{
+    --step-1-color:red;
+    --step-2-color:#ffd600;
+    --step-3-color:#ff9d00;
+    --step-4-color:#009cff;
+    --step-5-color:#1ae085;
+    --step-6-color:#76ff53;
+    --step-7-color:#3949AB;
+    --step-8-color:#ff6500;
+    --step-9-color:#8E44AD;
+    --step-10-color:#3498DB;
+    --step-11-color:#239B56;
+}
+
+.v-bar{
+    width:100%;
+    height:20px;
+    background: #e5e5e5;
+    border-radius:35px;
+    position:relative;
+}
+.v-bar .step{
+    position: absolute;
+    width: calc(100% / 11);
+    height:130px;
+    cursor: pointer;
+    transition:background 0.3s ease-in-out;
+}
+.v-bar .step:nth-child(even){
+    top:-110px;
+    background:transparent;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    padding-top:8px;
+    height: 122px;
+}
+.v-bar .step:nth-child(odd){
+    padding-bottom:8px;
+    height: 122px;
+    background:transparent;
+    border-bottom-right-radius:5px;
+    border-bottom-left-radius:5px;
+}
+.v-bar .step:hover,
+.v-bar .step.active{
+    background:#EBEDEF;
+}
+.v-bar .step:nth-child(even) .step-pro{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.v-bar .step.step-1 .step-pro::before{
+    border-color:var(--step-1-color);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+.v-bar .step.step-2 .step-pro::before{
+    border-color:var(--step-2-color);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+.v-bar .step.step-3 .step-pro::before{
+    border-color:var(--step-3-color);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+.v-bar .step.step-4 .step-pro::before{
+    border-color:var(--step-4-color);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+.v-bar .step.step-5 .step-pro::before{
+    border-color:var(--step-5-color);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+.v-bar .step.step-6 .step-pro::before{
+    border-color:var(--step-6-color);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+.v-bar .step.step-7 .step-pro::before{
+    border-color:var(--step-7-color);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+.v-bar .step.step-8 .step-pro::before{
+    border-color:var(--step-8-color);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+.v-bar .step.step-9 .step-pro::before{
+    border-color:var(--step-9-color);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+.v-bar .step.step-10 .step-pro::before{
+    border-color:var(--step-10-color);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+.v-bar .step.step-11 .step-pro::before{
+    border-color:var(--step-11-color);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+.v-bar .step .step-pro::before{
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    background: transparent;
+    transform: rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
+    border: 10px solid transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+.v-bar .step:nth-child(odd) .step-pro::before{
+    transform: translateX(-50%) rotate(-134deg);
+    top: 10px;
+}
+
+.v-bar .step:first-child .step-pro{
+    border-top-left-radius:35px;
+    border-bottom-left-radius:35px;
+}
+.v-bar .step:last-child .step-pro{
+    border-top-right-radius:35px;
+    border-bottom-right-radius:35px;
+}
+.v-bar .step .step-pro{
+    height: 20px;
+}
+.v-bar .step .step-divider{
+    height: 6px;
+    width: 40%;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%, -50%);
+    margin-top:20px;
+}
+.v-bar .step .step-title{
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: sans-serif;
+    letter-spacing: 0.5px;
+
+}
+.v-bar .step:nth-child(odd) .step-divider{
+    top: 90%;
+    margin-top:0px;
+}
+.v-bar .step:nth-child(odd) .step-title{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 30px;
+}
+    </style>
+</head>
+<body>
+    
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <form>
+    <div class="v-bar">
+        <label style="left:0px;" class="step step-1">
+            <input class="step-value" type="radio" name="completion_percent" style="display: none;" value="9">
+            <div style="background:var(--step-1-color);" class="step-pro"></div>
+            <div style="background:var(--step-1-color);" class="step-divider"></div>
+            <div class="step-title">Retainer Agreement Sent</div>
+        </label>
+
+        <label style="left:calc((100% / 11));" class="step step-2">
+            <input class="step-value" type="radio" name="completion_percent" style="display: none;" value="18">
+            <div style="background:var(--step-2-color);" class="step-pro"></div>
+            <div style="background:var(--step-2-color);" class="step-divider"></div>
+            <div class="step-title">Retainer Signed</div>
+        </label>
+
+        <label style="left:calc((100% / 11)*2);" class="step step-3">
+            <input class="step-value" type="radio" name="completion_percent" style="display: none;" value="27">
+            <div style="background:var(--step-3-color);" class="step-pro"></div>
+            <div style="background:var(--step-3-color);" class="step-divider"></div>
+            <div class="step-title">Invoice Sent</div>
+        </label>
+
+        <label style="left:calc((100% / 11)*3);" class="step step-4">
+            <input class="step-value" type="radio" name="completion_percent" style="display: none;" value="36">
+            <div style="background:var(--step-4-color);" class="step-pro"></div>
+            <div style="background:var(--step-4-color);" class="step-divider"></div>
+            <div class="step-title">Payment Received</div>
+        </label>
+
+        <label style="left:calc((100% / 11)*4);" class="step step-5">
+            <input class="step-value" type="radio" name="completion_percent" style="display: none;" value="45">
+            <div style="background:var(--step-5-color);" class="step-pro"></div>
+            <div style="background:var(--step-5-color);" class="step-divider"></div>
+            <div class="step-title">Documents Requested</div>
+        </label>
+
+        <label style="left:calc((100% / 11)*5);" class="step step-6">
+            <input class="step-value" type="radio" name="completion_percent" style="display: none;" value="54">
+            <div style="background:var(--step-6-color);" class="step-pro"></div>
+            <div style="background:var(--step-6-color);" class="step-divider"></div>
+            <div class="step-title">Documents Received</div>
+        </label>
+
+        <label style="left:calc((100% / 11)*6);" class="step step-7">
+            <input class="step-value" type="radio" name="completion_percent" style="display: none;" value="63">
+            <div style="background:var(--step-7-color);" class="step-pro"></div>
+            <div style="background:var(--step-7-color);" class="step-divider"></div>
+            <div class="step-title">Forms Complete</div>
+        </label>
+
+        <label style="left:calc((100% / 11)*7);" class="step step-8">
+            <input class="step-value" type="radio" name="completion_percent" style="display: none;" value="72">
+            <div style="background:var(--step-8-color);" class="step-pro"></div>
+            <div style="background:var(--step-8-color);" class="step-divider"></div>
+            <div class="step-title">Review Internal</div>
+        </label>
+
+        <label style="left:calc((100% / 11)*8);" class="step step-9">
+            <input class="step-value" type="radio" name="completion_percent" style="display: none;" value="81">
+            <div style="background:var(--step-9-color);" class="step-pro"></div>
+            <div style="background:var(--step-9-color);" class="step-divider"></div>
+            <div class="step-title">Review Client</div>
+        </label>
+
+        <label style="left:calc((100% / 11)*9);" class="step step-10">
+            <input class="step-value" type="radio" name="completion_percent" style="display: none;" value="90">
+            <div style="background:var(--step-10-color);" class="step-pro"></div>
+            <div style="background:var(--step-10-color);" class="step-divider"></div>
+            <div class="step-title">Submission</div>
+        </label>
+        <label style="left:calc((100% / 11)*10);" class="step step-11">
+            <input class="step-value" type="radio" name="completion_percent" style="display: none;" value="100">
+            <div style="background:var(--step-11-color);" class="step-pro"></div>
+            <div style="background:var(--step-11-color);" class="step-divider"></div>
+            <div class="step-title">Resulted</div>
+        </label>
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<button>submit</button>
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+    $('.step-value').on('click', function(){
+        $('.step').removeClass('active');
+        $(this).parents('.step').addClass('active');
+    });
+</script>
+
+</body>
+</html>
+
